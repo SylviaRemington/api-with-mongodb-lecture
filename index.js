@@ -7,10 +7,10 @@ const mongoose = require("mongoose");
 const Chicken = require("./models/chicken");//importing my models
 
 app.post("/chicken-types", async (req, res) => { //this doesn't do anything until we trigger the code & we do that with postman
-  res.send("this will create a new chicken type");
+  res.send("this will create a new chicken type"); //we invoke this function by using POSTMAN
   // TODO: Make this request dynamic so a user can use a tool such as postman
   // to send data to the API for saving in the database
-  const newChicken = await Chicken.create({
+  const newChicken = await Chicken.create({ //it should run this query and create a new database in our system
     name: "Anacona",
     color: "black",
     flavourRating: 5,
