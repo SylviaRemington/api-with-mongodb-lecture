@@ -4,7 +4,7 @@ dotenv.config();
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const Chicken = require("./models/chicken");
+const Chicken = require("./models/chicken");//importing my models
 
 app.post("/chicken-types", async (req, res) => {
   res.send("this will create a new chicken type");
@@ -35,3 +35,9 @@ app.listen(process.env.PORT, async () => {
     console.error("A problem occured connecting", e);
   }
 });
+
+
+//THIS WAS WRITTEN EARLY ON IN THE LECTURE & THEN CHANGED
+// app.listen(process.env.PORT, () =>
+//   console.log(`App is listening on port ${process.env.PORT}`)
+// );
