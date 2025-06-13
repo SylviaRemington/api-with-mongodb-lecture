@@ -14,3 +14,5 @@ module.exports = Chicken; //need to export the model
 // Models define the shape of the data.
 //it's also (the model) the way we use to talk to the database
 //the communicating and finding the methods for talking to the databases
+
+

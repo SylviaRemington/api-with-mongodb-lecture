@@ -26,7 +26,7 @@ app.post("/chicken-types", async (req, res) => { //this doesn't do anything unti
 
 app.get("/chicken-types", async (req, res) => {
   const chickens = await Chicken.find(); //find the Chicken model
-  res.json(chickens); 
+  res.json(chickens); // !WHEN START BACK AT LECTURE STARTING FROM HERE
   // const chickensAsHtml = `<p>${chickens[0].name}</p>`;
 
   res.send(chickensAsHtml);
