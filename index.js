@@ -1,4 +1,4 @@
-const dotenv = require("dotenv");
+const dotenv = require("dotenv"); //any of these requires means we are importing them
 dotenv.config();
 
 const express = require("express");
@@ -41,3 +41,13 @@ app.listen(process.env.PORT, async () => {
 // app.listen(process.env.PORT, () =>
 //   console.log(`App is listening on port ${process.env.PORT}`)
 // );
+
+//connecting to the database when we start the api
+//adding a try and a catch, and also adding async function:
+app.listen(process.env.PORT, async () =>
+  try {
+
+  } catch (e) {
+
+  }
+);
