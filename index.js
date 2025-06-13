@@ -26,11 +26,11 @@ app.post("/chicken-types", async (req, res) => { //this doesn't do anything unti
 
 app.get("/chicken-types", async (req, res) => {
   const chickens = await Chicken.find(); //find the Chicken model
-  const chickensSayHi = chickens.map((c) =>  `Chicken ${chickens.name} says hi`);
-  res.json(chickens); // !WHEN START BACK AT LECTURE STARTING FROM HERE
+  const chickensSayHi = chickens.map((c) =>  `Chicken ${c.name} says hi`);
+  res.json(chickensSayHi); // !WHEN START BACK AT LECTURE STARTING FROM HERE
   // const chickensAsHtml = `<p>${chickens[0].name}</p>`;
 
-  res.send(chickensSayHi);
+  // res.send(chickensSayHi);
 });
 
 app.listen(process.env.PORT, async () => {
