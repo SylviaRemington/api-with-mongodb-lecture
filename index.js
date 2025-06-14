@@ -33,7 +33,7 @@ app.post("/chicken-types", async (req, res) => {
 
   const body = req.body;
 
-  console.log(body);
+  console.log("The body is: " + body);
   res.send('some return value');
 
 //   console.log(newChicken);
