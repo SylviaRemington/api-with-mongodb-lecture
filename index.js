@@ -38,7 +38,7 @@ app.post("/chicken-types", async (req, res) => {
 
 //   console.log(newChicken);
 //   res.json(newChicken);
-// });
+});
 
 app.get("/chicken-types", async (req, res) => {
   const chickens = await Chicken.find(); //find the Chicken model
