@@ -27,7 +27,13 @@ app.post("/chicken-types", async (req, res) => { //this doesn't do anything unti
 app.get("/chicken-types", async (req, res) => {
   const chickens = await Chicken.find(); //find the Chicken model
   const chickensSayHi = chickens.map((c) =>  `Chicken ${c.name} says hi`);
-  res.json(chickensSayHi); // !WHEN START BACK AT LECTURE STARTING FROM HERE
+  // const chickensAsHtml = `${chickens.map(c => c.name)}`//this creates a loop, but changing it up and not doing that. Simplifying it below
+  const chickensAsHtml = `<p>${chickens[0].name}</p>`;
+
+  // res.json(chickensSayHi); //creates chicken message of Anaconaaaaah
+  // res.render(chickensAsHtml); //creates the whole html page but errors 500
+  res.send(chickensAsHtml); //just shows the p tag with chicken name
+
   // const chickensAsHtml = `<p>${chickens[0].name}</p>`;
 
   // res.send(chickensSayHi);
