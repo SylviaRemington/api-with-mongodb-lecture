@@ -5,6 +5,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const Chicken = require("./models/chicken");//importing my models
+const ejs = require('ejs');
 
 app.set('view engine', 'ejs'); //sets us up so we can use our ejs engine (and need views folder with a file .ejs)
 app.set('views',Path2D.join(__dirname, 'views')); //to change views name
@@ -46,7 +47,9 @@ app.use(express.json()); //using this inbuilt body parser as a form a middleware
 
   console.log(newChicken);
   res.json(newChicken);
-});
+
+  res.render('chickens', {message: "hello!"}); //!to render use ejs... something is wrong cause my app crashed, so currently commenting this out and going to watch rest of lecture and follow along.
+}); //this is a little template added to the app
 
 app.get("/chicken-types", async (req, res) => {
   const chickens = await Chicken.find(); //find the Chicken model
