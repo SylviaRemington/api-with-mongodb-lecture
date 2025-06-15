@@ -6,7 +6,8 @@ const app = express();
 const mongoose = require("mongoose");
 const Chicken = require("./models/chicken");//importing my models
 
-app.use(express.json) //!This is not complete. Revisit this when I come back from movie
+app.use(express.json()); //using this inbuilt body parser as a form a middleware? understanding the lesson
+//This gives our app the ability to pass the body on incoming requests & turn it into request.body.
 
 //This is not currently a dynamic code because the singular chicken is hardcoded.
 // app.post("/chicken-types", async (req, res) => { //this doesn't do anything until we trigger the code & we do that with postman
@@ -24,7 +25,7 @@ app.use(express.json) //!This is not complete. Revisit this when I come back fro
 //   res.json(newChicken);
 // });
 
-//Making above post into more dynamic
+//MAKING THE ABOVE POST MORE DYNAMIC:
 app.post("/chicken-types", async (req, res) => { 
   //   const newChicken = await Chicken.create({  
   //   name: "Anaconaaaaah", 
