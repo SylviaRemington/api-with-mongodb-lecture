@@ -9,5 +9,10 @@
   <body>
     <h1>Welcome To The Chicken Empire</h1>
     <p><%= message %></p>
+    <ul>
+        <% chickens.forEach((chicken) => { %>
+            <li><%= chicken.name %></li>
+            <% }) %>
+    </ul>
   </body>
 </html>
