@@ -10,7 +10,7 @@
     <h1>Welcome To The Chicken Empire</h1>
     <p><%= message %></p>
     <ul>
-        <% chickens.forEach((chicken) => { %>
+        <% chickens.forEach(function(chicken) { %>
             <li><%= chicken.name %></li>
             <% }) %>
     </ul>

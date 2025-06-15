@@ -53,16 +53,15 @@ app.use(express.json()); //using this inbuilt body parser as a form a middleware
 
 app.get("/chicken-types", async (req, res) => {
   const chickens = await Chicken.find(); //find the Chicken model
-  const chickensSayHi = chickens.map((c) =>  `Chicken ${c.name} says hi`);
+  res.render('chickens', {chickens});
+  // const chickensSayHi = chickens.map((c) =>  `Chicken ${c.name} says hi`);
   // const chickensAsHtml = `${chickens.map(c => c.name)}`//this creates a loop, but changing it up and not doing that. Simplifying it below
-  const chickensAsHtml = `<p>${chickens[0].name}</p>`;
+  // const chickensAsHtml = `<p>${chickens[0].name}</p>`;
 
   // res.json(chickensSayHi); //creates chicken message of Anaconaaaaah
   // res.render(chickensAsHtml); //creates the whole html page but errors 500
-  res.send(chickensAsHtml); //just shows the p tag with chicken name
-
+  // res.send(chickensAsHtml); //just shows the p tag with chicken name
   // const chickensAsHtml = `<p>${chickens[0].name}</p>`;
-
   // res.send(chickensSayHi);
 });
 
