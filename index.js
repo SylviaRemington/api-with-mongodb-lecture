@@ -6,6 +6,8 @@ const app = express();
 const mongoose = require("mongoose");
 const Chicken = require("./models/chicken");//importing my models
 
+app.set('view engine', 'ejs'); //sets us up so we can use our ejs engine (and need views folder with a file .ejs)
+
 app.use(express.json()); //using this inbuilt body parser as a form a middleware? understanding the lesson
 //!This gives our app the ability to pass the body on incoming requests & turn it into request.body.
 
